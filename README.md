@@ -1,7 +1,7 @@
-Spectra 16
-Roomate Matchin App (tentative title)
+#Spectra 16
+Roomate Matching App (tentative title)
 
-Written by:
+#Written by:
 Faye, Shreya, Akyya, Andrea, Stephanie
 
-
+#Description:
