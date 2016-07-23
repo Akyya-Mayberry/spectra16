@@ -38,4 +38,4 @@ def connect_to_db(app, db_uri=None):
     db.init_app(app)
 
 if __name__ == "__main__":
-    print "Successful Connected to database"
+    print("Successful Connected to database")
