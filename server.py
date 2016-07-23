@@ -3,9 +3,17 @@ import os
 
 # third party libs
 from flask import Flask, render_template, request, session, redirect
+    # for story files on server
+from werkzeug import secure_filename
+from werkzeug import SharedDataMiddleware
 
 # my libs
 from model import User, connect_to_db, db
+
+# Set up storage for uploaded photos
+APP_ROOT = os.path.dirname(os.path.abspath(__file__))
+UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/uploads')
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 # create app instance
 app = Flask(__name__)
