@@ -5,5 +5,3 @@ Roomate Matching App (tentative title)
 Faye, Shreya, Akyya, Andrea, Stephanie
 
 #Description:
-
-
