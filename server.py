@@ -5,10 +5,11 @@ import os
 from flask import Flask, render_template, request, session, redirect
 
 # my libs
-from model import connect_to_db, db
+from model import User, connect_to_db, db
 
 # create app instance
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY", "oribooboo")
 
 # all routes go here
 @app.route('/')
@@ -17,18 +18,35 @@ def index():
 
 	return render_template("index.html")
 
+@app.route('/login')
+def login():
+    """ Logs a registered user in """
+
+    # get credential data user 
+
+@app.route('/register')
+def register():
+    """ Registration form """
+
+    # takes a user to the registration form
+
+    return render_template("register.html")
+
 @app.route('/process-new-user', methods=["POST"])
 def process_new_user():
     """ Process users registration form """
 
     # Get information user entered in form
-    f_name = request.form['firstname']
-    l_name = request.form['lastname']
+    f_name = request.form['f-name']
+    l_name = request.form['l-name']
     email = request.form['email']
+    password = request.form['password']
+
+    print("#######User firstname", f_name)
     
     # create new user object to create and store
     # new user in the database
-    user = User(firstname=f_name, lastname=l_name, email=email)
+    user = User(f_name=f_name, l_name=l_name, email=email, password=password)
     
     # add user to database
     db.session.add(user)
@@ -40,13 +58,13 @@ def process_new_user():
     # Query on email, because this is what seperates
     # each user from the next .
     current_user = User.query.filter_by(email=email).one()
-    session["curren_user"] = {"user_id": current.user_id,
+    session["current_user"] = {"user_id": current_user.user_id,
                               "firstname": current_user.f_name
                               }
 
     # redirect user to homepage so that user can begin using site
 
-    return redirect('/')
+    return "new user %s %s created" % (current_user.f_name, current_user.l_name)
 
 # run server file here
 if __name__ == "__main__":
