@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-{% extends "base.html" %}
-{% block title %}Lilypad Home{% endblock %}
 
-{% block body %}
-	<div class="container">
-	  <div id="home">
-	    <img src="/static/uploads/lilypad.png" id="lilypad">
-	  </div>
-	</div>
-{% endblock %}
-=======
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,13 +22,21 @@
 </head>
 
 <body>
-<div class="container">
   <div id="home">
+    <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img src="/static/uploads/logo.png", id="logo"></img></a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="#">Register</a></li>
+      <li><a href="#">Login</a></li>
+    </ul>
+  </div>
+</nav>
+    
     <img src="/static/uploads/lilypad.png", id="lilypad"></img>
   </div>
-
-  </div>
-</div>
 </body>
 </html>
->>>>>>> bd375d64ab00039c0f26f01ab5f3c144c352ab35
