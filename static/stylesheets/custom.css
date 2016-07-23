@@ -1,0 +1,9 @@
+body {
+	padding-top: 20px;
+}
+
+
+#lilypad {
+	opacity: 0.85;
+	position: absolute;
+}
