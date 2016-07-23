@@ -24,8 +24,8 @@ class User(db.Model):
     # sex = db.Column(db.String(1), nullable=True)
     # dob = db.Column(db.Date, nullable=True)
     # age = db.Column(db.Integer, nullable=True)
-    # email = db.Column(db.String(50), nullable=True, unique=True)
-    # password = db.Column(db.String(30), nullable=True)
+    email = db.Column(db.String(50), nullable=True, unique=True)
+    password = db.Column(db.String(30), nullable=True)
     # profile_pic = db.Column(db.Text, default="Koala.jpg")
     # bio = db.Column(db.Text, nullable=True)
 
