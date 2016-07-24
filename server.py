@@ -22,15 +22,43 @@ app.config['SECRET_KEY'] = os.environ.get("FLASK_SECRET_KEY", "oribooboo")
 # all routes go here
 @app.route('/')
 def index():
-	""" Homepage for YouMate """
+    """ Homepage for Lilypad """
 
-	return render_template("index.html")
+    if "current_user" in session:
+        return redirect("/all-profiles")
+	
+    return render_template("/index.html")
 
-@app.route('/login')
+@app.route('/login', methods=["POST"])
 def login():
     """ Logs a registered user in """
 
-    # get credential data user 
+    email = request.form["email"]
+    password = request.form["password"]
+
+    # test if user exists
+    if User.query.filter_by(email=email).first() is None:
+        flash("<p>User with that email doesn't exist. <a href=\"/register\">Sign Up</a>.</p>", "error")
+        return redirect('/login')
+
+    # TODO ADD AUTHENTICATION ON USER
+    # 2. If user does exist, check the credentials. If password incorrect,
+    # flash message that password and email doesn't match
+
+    #3. User credentials are authenticated. Sign user in by creating a session,
+    #   and route user to their front page.
+    #   Decide if it is necessary to keep frontpage seperate from homepage.
+    current_user = User.query.filter_by(email=email).one()
+    session["current_user"] = {"user_id": current_user.user_id, "username": current_user.f_name}
+
+    return redirect('/all-profiles')
+
+@app.route('/logout')
+def logout():
+    """Logout signed in users"""
+
+    session.pop('current_user', 0)
+    return redirect('/')
 
 @app.route('/register')
 def register():
@@ -49,8 +77,6 @@ def process_new_user():
     l_name = request.form['l-name']
     email = request.form['email']
     password = request.form['password']
-
-    print("#######User firstname", f_name)
     
     # create new user object to create and store
     # new user in the database
@@ -72,8 +98,14 @@ def process_new_user():
 
     # redirect user to homepage so that user can begin using site
 
-    return "new user %s %s created" % (current_user.f_name, current_user.l_name)
+    return redirect("all-profiles.html")
 
+
+@app.route("/all-profiles")
+def all_profiles():
+    """ Displays all profiles of existing users """
+
+    return render_template('all-profiles.html')
 # run server file here
 if __name__ == "__main__":
     connect_to_db(app, os.environ.get("DATABASE_URL"))
