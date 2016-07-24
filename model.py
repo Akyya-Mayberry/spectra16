@@ -35,7 +35,7 @@ class User(db.Model):
     __tablename__ = "preferences"
 
     # Set up the basic info each user will have
-    user_id = db.Column(db.Integer, primary_key=True,nullable=False)
+    user_id = db.Column(db.Integer, primary_key=True,nullable=False, ForeignKey("users.user_id"))
     pets = db.Column(db.Boolean, nullable=True)
     queer = db.Column(db.Boolean, nullable=True)
     smoke = db.Column(db.Boolean, nullable=True)
