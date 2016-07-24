@@ -73,6 +73,7 @@ def logout():
 def register():
     """ Registration form """
 
+
     # takes a user to the registration form
 
     return render_template("blah.html")
@@ -86,6 +87,9 @@ def process_new_user():
     l_name = request.form['l-name']
     email = request.form['email']
     password = request.form['password']
+    file = request.form['videfile']
+
+    subprocess.call(['upload.py', file])
 
     print("#######User firstname", f_name)
 
