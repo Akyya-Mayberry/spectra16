@@ -30,7 +30,7 @@ def index():
 def login():
     """ Logs a registered user in """
 
-    # get credential data user 
+    # get credential data user
 
 @app.route('/register')
 def register():
@@ -38,7 +38,7 @@ def register():
 
     # takes a user to the registration form
 
-    return render_template("register.html")
+    return render_template("blah.html")
 
 @app.route('/process-new-user', methods=["POST"])
 def process_new_user():
@@ -51,18 +51,18 @@ def process_new_user():
     password = request.form['password']
 
     print("#######User firstname", f_name)
-    
+
     # create new user object to create and store
     # new user in the database
     user = User(f_name=f_name, l_name=l_name, email=email, password=password)
-    
+
     # add user to database
     db.session.add(user)
     db.session.commit()
 
     # after user account is created,
-    # create session for user so user 
-    # can stay logged in. 
+    # create session for user so user
+    # can stay logged in.
     # Query on email, because this is what seperates
     # each user from the next .
     current_user = User.query.filter_by(email=email).one()
