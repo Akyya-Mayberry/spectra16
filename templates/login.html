@@ -1,4 +1,22 @@
-<form action="login.html" method="post" role="form">  
- <label for="email"> Email: </label><input type="email" id="email" name="email"><br>
- <label for="password"> Password: </label><input type="password" id="password" name="password">
-</form>
+{% extends "base.html" %}  
+{% block title%}Sign In{% endblock %} 
+{% block body%}
+    <div class="container">
+    <div class="row">
+    <br><br><br><br><br>
+    <div style = "margin-left: 400px">
+        <div class="col-xs-6 col-sm-6" style="float:center;" align="center">
+                 <form class="form-signin" action="/process-login" method="post" role="form">
+                  <h2 class="form-signin-heading">sign in <span class="glyphicon glyphicon-leaf"></span></h2>
+                      <input type="email" id="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+                      <input type="password" name="password" class="form-control" placeholder="Password" required>
+                      <div class="checkbox">
+                        <label> <input type="checkbox" value="remember-me"> Remember me </label>
+                      </div>
+               <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign in">
+             </form>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}
