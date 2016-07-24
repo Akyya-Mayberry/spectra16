@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,34 +30,29 @@
     <ul class="nav navbar-nav">
       <li><a href="/register">Register</a></li>
       <li><a href="/login">Login</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
   </div>
 </nav>
 
 
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div id="carousel-example-generic">
       <div class="carousel-inner">
-          <div class="item active">
-              <img src="/static/uploads/lilypad.png" id="lilypad" alt="First slide">
-              <div class="carousel-caption">
-                  <h3>
-                      First slide</h3>
-                  <p>
-                      Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </div>
-          </div>
+        <img src="/static/uploads/lilypad.png" id="lilypad" alt="home">
       </div>
   </div>
   <div class="main-text hidden-xs">
       <div class="col-md-12 text-center">
-          <h1>
-              Static Headline And Content</h1>
-          <h3>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </h3>
+          <h1 id="homeTitle">
+              Lilypad
+              <span class="glyphicon glyphicon-leaf"></span>
+            </h1>
+          <h2>
+              Roommate matching made easier.
+          </h2>
           <div class="">
-              <a class="btn btn-clear btn-sm btn-min-block" href="http://www.jquery2dotnet.com/">Login</a><a class="btn btn-clear btn-sm btn-min-block"
-                  href="http://www.jquery2dotnet.com/">Registration</a></div>
+              <a class="btn btn-clear btn-lg btn-min-block" href="#">Looking for roommate</a><a class="btn btn-clear btn-lg btn-min-block"
+                  href="#">I'm offering a pad</a></div>
       </div>
   </div>
       </div>
@@ -72,15 +65,4 @@
   </div>
 </body>
 </html>
-=======
-{% extends "base.html" %}
-{% block title %}Lilypad Home{% endblock %}
 
-{% block body %}
-  <div class="container">
-    <div id="home">
-      <img src="/static/uploads/lilypad.png" id="lilypad">
-    </div>
-  </div>
-{% endblock %}
->>>>>>> 7d03b1a22ea350893a8f247d6d9bf2155bc1c72c
