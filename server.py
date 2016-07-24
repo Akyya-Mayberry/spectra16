@@ -83,6 +83,16 @@ def register():
 
     return render_template("blah.html")
 
+@app.route('/offering')
+def offering():
+    """ Offering page"""
+
+
+    # takes a user to the registration form
+
+    return render_template("offering.html")
+
+
 @app.route('/andrea')
 def andrea_abode():
     """ Registration form """
