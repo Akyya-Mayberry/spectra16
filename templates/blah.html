@@ -73,7 +73,7 @@
                   <label><input type="checkbox" value="" >Smoke friendly?</label>
                 </div>
                 <p align = "left"><b> Introduction Video</b> </p>
-                <input type = "file">
+                <input type = "file" name = "vidfile">
                 <p align = "left"><br> <b>Registering as a: </b></p>
                 <label class = "radio-inline"><input type="checkbox" name="isMentee"> Tenant </label>
                 <label align = "center" class = "radio-inline"><input type = "checkbox" name="isMentor"> Landlord</label>
@@ -88,4 +88,16 @@
       </div>
     </div>
     </form>
+
+    <div class="col-xs-6 col-sm-6 col-md-6">
+                 <form class="form-signin">
+                  <h2 class="form-signin-heading">sign in <span class="glyphicon glyphicon-leaf"></span></h2>
+                      <input type="email" name="signinEmail" class="form-control" placeholder="Email address" required autofocus>
+                      <input type="password" name="signinPassword" class="form-control" placeholder="Password" required>
+                      <div class="checkbox">
+                        <label> <input type="checkbox" value="remember-me"> Remember me </label>
+                      </div>
+               <input class="btn btn-lg btn-primary btn-block" type="submit" value="Sign in">
+             </form>
+    </div>
 </body>
