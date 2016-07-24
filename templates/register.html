@@ -4,19 +4,31 @@
 	<div class="container">
 		<h1>Create A New Account</h1>
 		<form action="/process-new-user" method="post" role="form">
+			<table>
+			<tr>
 			<div class="form-group">
-	  			<label for="firstname"> First Name: </label><input type="text" id="firstname" name="f-name"><br>
+	  			<td><label for="firstname"> First Name: </label></td>
+	  			<td><input type="text" id="firstname" name="f-name"></td><br>
 	  		</div>
+	  		</tr>
+	  		<tr>
 	  		<div class="form-group">
-	  			<label for="lastname"> Last Name: </label><input type="text" id="lastname" name="l-name"><br>
+	  			<td><label for="lastname"> Last Name: </label></td>
+	  			<td><input type="text" id="lastname" name="l-name"></td><br>
 	   		</div>
+	   		</tr>
+	   		<tr>
 	   	<div class="form-group">
-	  		<label for="email"> Email: </label><input type="email" id="email" name="email"><br>
+	  		<td><label for="email"> Email: </label></td><td><input type="email" id="email" name="email"></td><br>
 	   	</div>
+	   	</tr>
+	   	<tr>
 	   	<div class="form-group">
-	  		<label for="password"> Password: </label><input type="password" id="password" name="password"><br>
+	  		<td><label for="password"> Password: </label></td><td><input type="password" id="password" name="password"></td><br>
 		</div>
+		</tr>
 	  	<input type="submit" value="Submit" class="btn btn-default">
+	  	</table>
 	</form>
 </div>
 {% endblock %}
