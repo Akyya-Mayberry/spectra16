@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block title %}Account Registration{% endblock %}
 {% block body %}
-	<div class="container">
+	<div class="container" style="text-align:center;">
 		<h1>Create A New Account</h1>
-		<form action="/process-new-user" method="post" role="form">
-			<table>
+		<form action="/process-new-user" method="post" role="form" >
+			<table  align= "center">
 			<tr>
 			<div class="form-group">
 	  			<td><label for="firstname"> First Name: </label></td>
@@ -27,7 +27,7 @@
 	  		<td><label for="password"> Password: </label></td><td><input type="password" id="password" name="password"></td><br>
 		</div>
 		</tr>
-	  	<input type="submit" value="Submit" class="btn btn-default">
+	  	<tr><td><input type="submit" value="Submit" class="btn btn-default"></td></tr>
 	  	</table>
 	</form>
 </div>
