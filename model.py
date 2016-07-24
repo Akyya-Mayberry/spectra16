@@ -29,20 +29,20 @@ class User(db.Model):
     # profile_pic = db.Column(db.Text, default="Koala.jpg")
     # bio = db.Column(db.Text, nullable=True)
 
-class User(db.Model):
-    """Users model"""
+# class Preference(db.Model):
+#     """Users model"""
 
-    __tablename__ = "preferences"
+#     __tablename__ = "preferences"
 
-    # Set up the basic info each user will have
-    user_id = db.Column(db.Integer, primary_key=True,nullable=False, ForeignKey("users.user_id"))
-    pets = db.Column(db.Boolean, nullable=True)
-    queer = db.Column(db.Boolean, nullable=True)
-    smoke = db.Column(db.Boolean, nullable=True)
-    # sex = db.Column(db.String(1), nullable=True)
-    # dob = db.Column(db.Date, nullable=True)
-    # age = db.Column(db.Integer, nullable=True)
-    tenant_landlord = db.Column(db.String(50), nullable=True, unique=True)
+#     # Set up the basic info each user will have
+#     user_id = db.Column(db.Integer, primary_key=True, nullable=False, ForeignKey("users.user_id"))
+#     pets = db.Column(db.Boolean, nullable=True)
+#     queer = db.Column(db.Boolean, nullable=True)
+#     smoke = db.Column(db.Boolean, nullable=True)
+#     # sex = db.Column(db.String(1), nullable=True)
+#     # dob = db.Column(db.Date, nullable=True)
+#     # age = db.Column(db.Integer, nullable=True)
+#     tenant_landlord = db.Column(db.String(50), nullable=True, unique=True)
     
 def connect_to_db(app, db_uri=None):
     """ Connect application to database """
