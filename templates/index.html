@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <!DOCTYPE html>
 <html>
@@ -22,6 +23,11 @@
 </head>
 
 <body>
+=======
+{% extends "base.html" %}
+{% block title %}Lilypad Home{% endblock %}
+{% block body %}
+>>>>>>> d6764038d3dd960edd92057b29fa8f3f618cf0b4
     <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -31,38 +37,31 @@
     <ul class="nav navbar-nav">
       <li><a href="/register">Register</a></li>
       <li><a href="/login">Login</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
   </div>
 </nav>
 
-
-  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-          <div class="item active">
-              <img src="/static/uploads/lilypad.png" id="lilypad" alt="First slide">
-              <div class="carousel-caption">
-                  <h3>
-                      First slide</h3>
-                  <p>
-                      Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-              </div>
-          </div>
-      </div>
+  <div id="carousel-example-generic">
+    <img src="/static/uploads/lilypad.png" id="lilypad" alt="home">
   </div>
   <div class="main-text hidden-xs">
       <div class="col-md-12 text-center">
-          <h1>
-              Static Headline And Content</h1>
-          <h3>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          </h3>
+          <h1 id="homeTitle">
+              Lilypad
+              <span class="glyphicon glyphicon-leaf"></span>
+            </h1>
+          <h2>
+              Roommate matching made easier.
+          </h2>
           <div class="">
-              <a class="btn btn-clear btn-sm btn-min-block" href="http://www.jquery2dotnet.com/">Login</a><a class="btn btn-clear btn-sm btn-min-block"
-                  href="http://www.jquery2dotnet.com/">Registration</a></div>
+              <a class="btn btn-clear btn-lg btn-min-block" href="/roommate">Find roommate</a><a class="btn btn-clear btn-lg btn-min-block"
+                  href="/offering">I'm offering a pad</a></div>
       </div>
   </div>
       </div>
   </div>
+<<<<<<< HEAD
 
 <div id="push">
 </div>
@@ -71,3 +70,9 @@
   </div>
 </body>
 </html>
+=======
+    
+  </div>
+{% endblock %}
+
+>>>>>>> d6764038d3dd960edd92057b29fa8f3f618cf0b4

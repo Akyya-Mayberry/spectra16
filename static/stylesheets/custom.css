@@ -1,9 +1,13 @@
 
 #lilypad {
-	opacity: 0.85;
 	position: relative;
 	width: 100%;
-	height: 500px;
+	height: 460px;
+}
+
+h2 {
+	padding-bottom: 15px;
+	margin-top: -5px;
 }
 
 #logo {
@@ -14,9 +18,15 @@
 
 #carousel-example-generic {
 	position: relative;
-	width: 98%;
-	height:500px;
+	width: 100%;
+	height:460px;
 	margin-top: -20px;
+}
+
+
+#homeTitle {
+	font-size: 5em;
+	padding-top: 120px;
 }
 
 .main-text
