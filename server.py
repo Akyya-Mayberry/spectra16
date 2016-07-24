@@ -26,11 +26,18 @@ def index():
 
     if "current_user" in session:
         return redirect("/all-profiles")
+	
+    return render_template("index.html")
 
-    return render_template("/index.html")
-
-@app.route('/login', methods=["POST"])
+@app.route('/login')
 def login():
+    """ Form for users to log in """
+
+    return render_template("login.html")
+
+
+@app.route('/process-login', methods=["POST"])
+def process_login():
     """ Logs a registered user in """
 
     email = request.form["email"]
